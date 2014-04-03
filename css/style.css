@@ -1,6 +1,41 @@
+.button
+{
+	min-width: 33px;
+	min-height: 21px;
+}
+.input
+{
+	width: 100%;
+}
 .screen
 {
-	min-width: 300px;
-	min-height: 300px;
+	width: 100%;
 	background-color: green;
+}
+@media only screen and (max-width: 480px)
+{
+	.screen
+	{
+		height: 100px;
+	}
+}
+@media only screen and (max-width: 768px)
+{
+	.button
+	{
+		height: 50px;
+		width: 90px;
+	}
+}
+@media only screen and (max-width: 980px)
+{
+	.button
+	{
+		height: 75px;
+		width: 120px;
+	}
+	.screen
+	{
+		height: 150px;
+	}
 }
