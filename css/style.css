@@ -12,3 +12,16 @@
 	width: 100%;
 	background-color: green;
 }
+.calc
+{
+	display: inline-block;
+}
+.center
+{
+	display:block;
+	margin: auto;
+}
+.no-bullet
+{
+	list-style: none;
+}
