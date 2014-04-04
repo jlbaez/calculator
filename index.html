@@ -18,14 +18,14 @@
 		<div class="container">
 			<div class="screen" id="screen"></div>
 			<div class="input-control text">
-				<input type="text" class="input" id="input">
+				<input type="text" class="input" id="input" autocomplete="off">
 			</div>
 		</div>
 		<div class="container">
 			<div class="center">
 				<form id="buttons" class="calc">
 					<p>
-						<input type="button" class="button large danger" value="clear">
+						<input type="button" id="clear" class="button large danger" value="clear">
 					</p>
 					<p>
 						<input type="button" class="pad button large default" value="7">
@@ -48,7 +48,7 @@
 					<p>
 						<input type="button" class="pad button large default" value=".">
 						<input type="button" class="pad button large default" value="0">
-						<input type="button" class="pad button large primary" value="=">
+						<input type="button" id="equals" class="button large primary" value="=">
 						<input type="button" class="pad button large default" value="+">
 					</p>
 				</form>

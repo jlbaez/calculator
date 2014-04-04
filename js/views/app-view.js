@@ -4,18 +4,20 @@ var app = app || {};
 		el: document.getElementById('calculator'),
 		events: {
 			'click .pad': 'addInput',
+			'click #clear': 'clearInput',
+			'click #equals': 'solveEquation'
 		},
 		initialize: function(){
 			this.$input = document.getElementById('input');
-			_.bindAll(this, 'render');
-			this.render();
-		},
-		render: function(){
-			//$(this.el).append("<ul> <li>hello world</li> </ul>");
 		},
 		addInput: function(e){
-			console.log(e);
-			console.log(this);
+			this.$input.value += e.currentTarget.value;
+		},
+		clearInput: function(){
+			this.$input.value = "";
+		},
+		solveEquation: function() {
+			console.log("here");
 		}
 	});
 })(jQuery);
