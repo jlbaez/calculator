@@ -12,30 +12,3 @@
 	width: 100%;
 	background-color: green;
 }
-@media only screen and (max-width: 480px)
-{
-	.screen
-	{
-		height: 100px;
-	}
-}
-@media only screen and (max-width: 768px)
-{
-	.button
-	{
-		height: 50px;
-		width: 90px;
-	}
-}
-@media only screen and (max-width: 980px)
-{
-	.button
-	{
-		height: 75px;
-		width: 120px;
-	}
-	.screen
-	{
-		height: 150px;
-	}
-}
