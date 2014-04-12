@@ -27,7 +27,6 @@ var decimal = false;
 					{
 						if(value === '.')
 						{
-							console.log(decimal);
 							if(!decimal)
 							{
 								this.$input.value += value;
@@ -36,10 +35,10 @@ var decimal = false;
 						}
 						else
 						{
-							console.log("here");
 							this.$input.value += value;
-							if(array.indexOf(value) !== -1 || value === '.')
+							if(array.indexOf(value) !== -1 || value === '-')
 							{
+								console.log("her");
 								decimal = false;
 							}
 						}
