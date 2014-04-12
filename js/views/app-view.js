@@ -1,4 +1,5 @@
 var app = app || {};
+var decimal = false;
 (function(){
 	app.AppView = Backbone.View.extend({
 		el: document.getElementById('calculator'),
@@ -11,13 +12,46 @@ var app = app || {};
 			this.$input = document.getElementById('input');
 		},
 		addInput: function(e){
-			this.$input.value += e.currentTarget.value;
+			var array = ['*', '/', '+'],
+				value = e.currentTarget.value,
+				lastchar = this.$input.value.charAt(this.$input.value.length - 1);
+			if(this.$input.value === "" && array.indexOf(value) === -1)
+			{
+				this.$input.value += e.currentTarget.value;
+			}
+			else if(this.$input.value !== "")
+			{
+				if(value !== '.' || lastchar !== '.')
+				{
+					if((array.indexOf(value) === -1 || array.indexOf(lastchar) === -1))
+					{
+						if(value === '.')
+						{
+							console.log(decimal);
+							if(!decimal)
+							{
+								this.$input.value += value;
+								decimal = true;
+							}
+						}
+						else
+						{
+							console.log("here");
+							this.$input.value += value;
+							if(array.indexOf(value) !== -1 || value === '.')
+							{
+								decimal = false;
+							}
+						}
+					}
+				}
+			}
 		},
 		clearInput: function(){
 			this.$input.value = "";
 		},
 		solveEquation: function() {
-			console.log("here");
+			this.$input.value = eval(this.$input.value);
 		}
 	});
 })(jQuery);
