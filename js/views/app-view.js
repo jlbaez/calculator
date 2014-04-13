@@ -6,7 +6,8 @@ var decimal = false;
 		events: {
 			'click .pad': 'addInput',
 			'click #clear': 'clearInput',
-			'click #equals': 'solveEquation'
+			'click #equals': 'solveEquation',
+			'keypress #input': 'cancel'
 		},
 		initialize: function(){
 			this.$input = document.getElementById('input');
@@ -52,6 +53,10 @@ var decimal = false;
 		},
 		solveEquation: function() {
 			this.$input.value = eval(this.$input.value);
+		},
+		cancel: function(e) {
+			e.preventDefault();
+			console.log("here");
 		}
 	});
 })(jQuery);
