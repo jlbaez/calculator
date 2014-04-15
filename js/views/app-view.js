@@ -11,7 +11,7 @@ var decimal = false;
 		},
 		initialize: function(){
 			this.$input = document.getElementById('input');
-                        Hammer(document.getElementById("buttons")).on("dragleft swipeleft", function (ev){
+                        Hammer(document.getElementById("buttons")).on("dragleft dragright swiperight swipeleft", function (ev){
                 switch(ev.type)
 		{
                case "dragleft": 
@@ -19,6 +19,12 @@ var decimal = false;
                document.getElementById("complex").style.display="block"; 
                document.getElementById("simple").style.display="none";
                break;
+               case "dragright":
+               case "swiperight":
+               document.getElementById("complex").style.display="none";
+               document.getElementById("simple").style.display="block";
+               break;
+
 }
 
 
