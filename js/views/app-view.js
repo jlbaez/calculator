@@ -11,35 +11,22 @@ var decimal = false;
 		},
 		initialize: function(){
 			this.$input = document.getElementById('input');
-                        Hammer(document.getElementById("buttons")).on("dragleft dragright swiperight swipeleft", function (ev){
-                switch(ev.type)
-		{
-               case "dragleft": 
-               case "swipeleft":
-               document.getElementById("complex").style.display="block"; 
-               document.getElementById("simple").style.display="none";
-               break;
-               case "dragright":
-               case "swiperight":
-               document.getElementById("complex").style.display="none";
-               document.getElementById("simple").style.display="block";
-               break;
-
-}
-
-
-});
-       
-
-
-
-},
-                
-            
-
-
-
-
+			Hammer(document.getElementById("buttons")).on("dragleft dragright swiperight swipeleft", function (ev){
+				switch(ev.type)
+				{
+					case "dragleft": 
+					case "swipeleft":
+						document.getElementById("complex").style.display="block"; 
+						document.getElementById("simple").style.display="none";
+						break;
+					case "dragright":
+					case "swiperight":
+						document.getElementById("complex").style.display="none";
+						document.getElementById("simple").style.display="block";
+						break;
+				}
+			});
+		},
 		addInput: function(e){
 			var array = ['*', '/', '+'],
 				value = e.currentTarget.value,
