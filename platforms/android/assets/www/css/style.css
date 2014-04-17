@@ -1,0 +1,55 @@
+input[type="text"]
+{
+	font-size: 50px;
+}
+.button
+{
+	width: 70px;
+	height: 70px;
+}
+.calc
+{
+	display: inline-block;
+	-webkit-user-select: none;
+	-moz-user-select: none;     
+	-ms-user-select: none;      
+	-o-user-select: none;
+	user-select: none; 
+}
+.center
+{
+	display:block;
+	margin: auto;
+	width: 293px;
+}
+.metro
+{
+	background-color: rgb(239, 234, 227);
+}
+.input
+{
+	width: 100%;
+}
+.text
+{
+	height: 59px !important;
+	margin-top: 10px;
+}
+.screen
+{
+	width: 100%;
+	background-color: green;
+}
+.no-bullet
+{
+	list-style: none;
+}
+#clear
+{
+	height: 70px;
+	width: 90px;
+}
+#complex
+{
+	display: none;
+}
