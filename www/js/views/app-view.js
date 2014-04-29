@@ -51,14 +51,14 @@ $(document).ready(function () {
         $(keyPad_UserInput).focus();
     });
 
-    // FROM MEM TO INPUT BOX 
+    // FROM MEMORY  TO INPUT BOX 
     $("div#keyPad button#keyPad_btnFromMem").click(function () {
         $(keyPad_UserInput).val($(keyPad_UserInput).val() + $(keyPad_Mem).val());
         $(keyPad_Mem).val(strEmpty);
         $(keyPad_UserInput).focus();
     });
 
-    // CALCULATE 4 ARITHMETIC OPERATIONS
+    // Functions to Operate Arithmetic operations
     $("button#keyPad_btnEnter").click(function () {
         var inputBox = $(keyPad_UserInput);
         var arrVal;
