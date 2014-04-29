@@ -17,68 +17,100 @@
 		</nav>
 	</nav>
 	<div id="calculator">
-		<div class="container">
+		<div class="main">
 			<div class="screen" id="screen"></div>
 			<div class="input-control text">
 				<input type="text" class="input" id="input" autocomplete="off">
 			</div>
 		</div>
-		<div class="container">
-			<div class="center">
-				<form id="buttons" class="calc">
-					<p>
-						<input type="button" id="clear" class="large danger" value="clear">
-					</p>
-					<div id="simple">	
-						<p>
-							<input type="button" class="pad button large default" value="7">
-							<input type="button" class="pad button large default" value="8">
-							<input type="button" class="pad button large default" value="9">
-							<input type="button" class="pad button large default" value="/">
-						</p>
-						<p>
-							<input type="button" class="pad button large default" value="4">
-							<input type="button" class="pad button large default" value="5">
-							<input type="button" class="pad button large default" value="6">
-							<input type="button" class="pad button large default" value="*">
-						</p>
-						<p>
-							<input type="button" class="pad button large default" value="1">
-							<input type="button" class="pad button large default" value="2">
-							<input type="button" class="pad button large default" value="3">
-							<input type="button" class="pad button large default" value="-">
-						</p>
-						<p>
-							<input type="button" class="pad button large default" value=".">
-							<input type="button" class="pad button large default" value="0">
-							<input type="button" id="equals" class="button large primary" value="=">
-							<input type="button" class="pad button large default" value="+">
-						</p>
-					</div >
-					<div id="complex">
-						<p>
-							<input type="button" class="pad button large default" value="sin">
-							<input type="button" class="pad button large default" value="cos">
-							<input type="button" class="pad button large default" value="tan">
-							
-						</p>
-						<p>
-							<input type="button" class="pad button large default" value="ln">
-							<input type="button" class="pad button large default" value="log">
-							<input type="button" class="pad button large default" value="!">
-							
-						</p>
-						<p>
-							<input type="button" class="pad button large default" value="pi">
-							<input type="button" class="pad button large default" value="e">
-							<input type="button" class="pad button large default" value="^">
-							
-						</p>
-						<p>
-							<input type="button" class="pad button large default" value="(">
-							<input type="button" class="pad button large default" value=")">
-							<input type="button" id="equals" class="button large default" value="&#10004;">
-						</p>
+		<div class = "main">
+    	    <div class="inf">i</div>
+    	    <header>
+      		    <h1>MATH CALCULATOR</h1>
+    	    </header>
+     	    <div class="clear"></div>
+     	
+	        <div id="keyPad">
+		
+		        <!--USER INPUT-->
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnToMem">&#8681</button>
+		        </div>
+        	        <input type="text" id="keyPad_UserInput" readonly /></input>
+		        <div class="clear"></div>
+		
+		        <!--MEM-->
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnFromMem">&#8679</button>
+		        </div>
+ 		        <input type="text" id="keyPad_Mem" readonly /></input> 
+      		        <div class="clear"></div>
+
+		        <!--1st ROW-->
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnPlus" class="keyPad_btnNormal">+</button>
+			        <button id="keyPad_btnMinus" class="keyPad_btnNormal">-</button>
+			        <button id="keyPad_btnMult" class="keyPad_btnNormal">*</button>
+			        <button id="keyPad_btnDiv" class="keyPad_btnNormal">/</button>	
+		        </div>
+
+		        <button id="keyPad_btn1" class="keyPad_btnNormal">1</button>
+        	        <button id="keyPad_btn2" class="keyPad_btnNormal">2</button>
+        	        <button id="keyPad_btn3" class="keyPad_btnNormal">3</button>
+		        <div class="clear"></div>
+		
+		        <!--2nd ROW-->	
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnInverseSign" class="keyPad_btnCommand">+/-</button>
+			        <button id="keyPad_btnInverse" class="keyPad_btnCommand">1/x</button>
+			        <button id="keyPad_btnSquare" class="keyPad_btnCommand">x<sup>2</sup></button>
+			        <button id="keyPad_btnSquareRoot" class="keyPad_btnCommand">&#8730</button>
+		        </div>
+        	        <button id="keyPad_btn4" class="keyPad_btnNormal">4</button>
+        	        <button id="keyPad_btn5" class="keyPad_btnNormal">5</button>
+        	        <button id="keyPad_btn6" class="keyPad_btnNormal">6</button>
+		        <div class="clear"></div>
+ 
+		        <!--3rd ROW-->	  
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnCube" class="keyPad_btnCommand">x<sup>3</sup></button>
+			        <button id="keyPad_btnCubeRoot" class="keyPad_btnCommand">&#8731</button>
+			        <button id="keyPad_btnLog" class="keyPad_btnCommand">Log</button>
+			        <button id="keyPad_btnExp" class="keyPad_btnCommand">e<sup>x</sup></button>
+		        </div>     
+		        <button id="keyPad_btn7" class="keyPad_btnNormal">7</button>
+        	        <button id="keyPad_btn8" class="keyPad_btnNormal">8</button>
+        	        <button id="keyPad_btn9" class="keyPad_btnNormal">9</button>
+		        <div class="clear"></div>
+
+		        <!--4th ROW-->
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnSin" class="keyPad_btnCommand">sin</button>
+			        <button id="keyPad_btnCosin" class="keyPad_btnCommand">cos</button>
+			        <button id="keyPad_btnTg" class="keyPad_btnCommand">tan</button>
+			        <button id="keyPad_btnCtg" class="keyPad_btnCommand">ctg</button>
+		        </div> 
+		        <button id="keyPad_btnDot" class="keyPad_btnNormal">.</button>
+        	        <button id="keyPad_btn0" class="keyPad_btnNormal">0</button>
+		        <button id="keyPad_btnSpace" class="keyPad_btnSpace">SPC</button>
+		        <div class="clear"></div>
+
+		        <!--5th ROW-->
+		        <div class="keys_ToRight">
+			        <button id="keyPad_btnEnter" class="keyPad_btnEnter">=</button>
+		        </div>  
+        	        <button id="keyPad_btnBack" class="keyPad_btnBack">&#8678</button>
+		        <button id="keyPad_btnClr" class="keyPad_btnClr">CLR</button>
+		        <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+
+            <article>
+	        <div class = "panel">
+	 	        <p>
+	    		    <strong>Example</strong>: calculate the expression: 243.4+345*98.1
+		        </p>
+        				</p>
 					</div>				
 				</form>
 			</div>
