@@ -1,5 +1,6 @@
 var app = app || {};
-var decimal = false;
+var decimal = false,
+	pararen = 0;
 (function(){
 	app.AppView = Backbone.View.extend({
 		el: document.getElementById('calculator'),
@@ -14,9 +15,9 @@ var decimal = false;
 			Hammer(document.getElementById("buttons")).on("dragleft dragright swiperight swipeleft", function (ev){
 				switch(ev.type)
 				{
-					case "dragleft": 
+					case "dragleft":
 					case "swipeleft":
-						document.getElementById("complex").style.display="block"; 
+						document.getElementById("complex").style.display="block";
 						document.getElementById("simple").style.display="none";
 						break;
 					case "dragright":
@@ -29,11 +30,24 @@ var decimal = false;
 		},
 		addInput: function(e){
 			var array = ['*', '/', '+'],
+				functions = ['sin', 'cos', 'tan', 'ln', 'log'],
 				value = e.currentTarget.value,
 				lastchar = this.$input.value.charAt(this.$input.value.length - 1);
 			if(this.$input.value === "" && array.indexOf(value) === -1)
 			{
-				this.$input.value += e.currentTarget.value;
+				if(value !== ')')
+				{
+					this.$input.value += value;
+					if(functions.indexOf(value) !== -1)
+					{
+						this.$input.value += "(";
+						pararen += 1;
+					}
+					if(value === "(")
+					{
+						pararen += 1;
+					}
+				}
 			}
 			else if(this.$input.value !== "")
 			{
@@ -51,10 +65,26 @@ var decimal = false;
 						}
 						else
 						{
+							if(value === ")" && pararen === 0)
+							{
+								return;
+							}
+							else if(value === ")")
+							{
+								pararen += -1;
+							}
 							this.$input.value += value;
+							if(functions.indexOf(value) !== -1)
+							{
+								this.$input.value += "(";
+								pararen += 1;
+							}
+							if(value === "(")
+							{
+								pararen += 1;
+							}
 							if(array.indexOf(value) !== -1 || value === '-')
 							{
-								console.log("her");
 								decimal = false;
 							}
 						}
@@ -64,9 +94,17 @@ var decimal = false;
 		},
 		clearInput: function(){
 			this.$input.value = "";
+			decimal = false;
 		},
 		solveEquation: function() {
-			this.$input.value = eval(this.$input.value);
+			if(pararen === 0)
+			{
+				if(navigator.notification !== undefined)
+				{
+					navigator.notification.vibrate(500);
+				}
+				this.$input.value = eval(this.$input.value);
+			}
 		},
 		cancel: function(e) {
 			e.preventDefault();

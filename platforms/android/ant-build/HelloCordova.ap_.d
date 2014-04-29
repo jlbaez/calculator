@@ -18,6 +18,7 @@
 /home/jose/Development/calculator/platforms/android/assets/www/index.html \
 /home/jose/Development/calculator/platforms/android/assets/www/js \
 /home/jose/Development/calculator/platforms/android/assets/www/cordova.js \
+/home/jose/Development/calculator/platforms/android/assets/www/plugins \
 /home/jose/Development/calculator/platforms/android/assets/www/cordova_plugins.js \
 /home/jose/Development/calculator/platforms/android/assets/www/css/metro-bootstrap-responsive.css \
 /home/jose/Development/calculator/platforms/android/assets/www/css/metro-bootstrap.css \
@@ -34,4 +35,7 @@
 /home/jose/Development/calculator/platforms/android/assets/www/js/vender/underscore-min.js \
 /home/jose/Development/calculator/platforms/android/assets/www/js/vender/underscore-min.map \
 /home/jose/Development/calculator/platforms/android/assets/www/js/views/app-view.js \
+/home/jose/Development/calculator/platforms/android/assets/www/plugins/org.apache.cordova.vibration \
+/home/jose/Development/calculator/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www \
+/home/jose/Development/calculator/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www/vibration.js \
 /home/jose/Development/calculator/platforms/android/ant-build/AndroidManifest.xml \
