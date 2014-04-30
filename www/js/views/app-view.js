@@ -30,7 +30,7 @@ var decimal = false,
 		},
 		addInput: function(e){
 			var array = ['*', '/', '+'],
-				functions = ['sin', 'cos', 'tan', 'ln', 'log'],
+				functions = ['sin', 'cos', 'tan', 'ln', 'log', '√']
 				value = e.currentTarget.value,
 				lastchar = this.$input.value.charAt(this.$input.value.length - 1);
 			if(this.$input.value === "" && array.indexOf(value) === -1)
@@ -97,9 +97,30 @@ var decimal = false,
 			decimal = false;
 		},
 		solveEquation: function() {
+			var equation = this.$input.value;
+			equation = equation.replace("π", "Math.PI");
+			equation = equation.replace("sin", "Math.sin");
+			equation = equation.replace("cos", "Math.cos");
+			equation = equation.replace("tan", "Math.tan");
+			equation = equation.replace("ln", "Math.log");
+			equation = equation.replace("e", "Math.E");
+			if(equation.indexOf("^") != -1)
+			{
+				var array = equation.split("^");
+				equation = "Math.pow(" + array[0] + "," + array[1] + ")";
+			}
+			console.log(equation);
+			console.log(pararen);
 			if(pararen === 0)
 			{
-				this.$input.value = eval(this.$input.value);
+				try
+				{
+					this.$input.value = eval(equation);
+				}
+				catch(err)
+				{
+					this.$input.value = "ERROR";
+				}
 			}
 		},
 		cancel: function(e) {
