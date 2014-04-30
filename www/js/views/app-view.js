@@ -112,8 +112,7 @@ var decimal = false,
 				var array = equation.split("^");
 				equation = "Math.pow(" + array[0] + "," + array[1] + ")";
 			}
-			console.log(equation);
-			console.log(factorial);
+			console.log("factorial");
 			if(pararen === 0)
 			{
 				try
@@ -138,6 +137,7 @@ var decimal = false,
 			equation = equation.replace("cos", "Math.cos");
 			equation = equation.replace("tan", "Math.tan");
 			equation = equation.replace("ln", "Math.log");
+			equation = equation.replace("log", "Math.log10");
 			equation = equation.replace("e", "Math.E");
 			equation = equation.replace("√", "Math.sqrt")
 			if(equation.indexOf("^") != -1)
