@@ -8,6 +8,7 @@ var decimal = false,
 			'click .pad': 'addInput',
 			'click #clear': 'clearInput',
 			'click #equals': 'solveEquation',
+			'click #factorial': 'solveFactorialEquation',
 			'keypress #input': 'cancel'
 		},
 		initialize: function(){
@@ -95,6 +96,40 @@ var decimal = false,
 		clearInput: function(){
 			this.$input.value = "";
 			decimal = false;
+			pararen = 0;
+		},
+		solveFactorialEquation: function() {
+			var equation = this.$input.value;
+			equation = equation.replace("π", "Math.PI");
+			equation = equation.replace("sin", "Math.sin");
+			equation = equation.replace("cos", "Math.cos");
+			equation = equation.replace("tan", "Math.tan");
+			equation = equation.replace("ln", "Math.log");
+			equation = equation.replace("e", "Math.E");
+			equation = equation.replace("√", "Math.sqrt")
+			if(equation.indexOf("^") != -1)
+			{
+				var array = equation.split("^");
+				equation = "Math.pow(" + array[0] + "," + array[1] + ")";
+			}
+			console.log(equation);
+			console.log(factorial);
+			if(pararen === 0)
+			{
+				try
+				{
+					var output = eval(equation),
+						val=1;
+					for (var i = 2; i <= output; i++){
+						val = val * i;
+					}
+					this.$input.value = eval(val);
+				}
+				catch(err)
+				{
+					this.$input.value = "ERROR";
+				}
+			}
 		},
 		solveEquation: function() {
 			var equation = this.$input.value;
@@ -104,13 +139,13 @@ var decimal = false,
 			equation = equation.replace("tan", "Math.tan");
 			equation = equation.replace("ln", "Math.log");
 			equation = equation.replace("e", "Math.E");
+			equation = equation.replace("√", "Math.sqrt")
 			if(equation.indexOf("^") != -1)
 			{
 				var array = equation.split("^");
 				equation = "Math.pow(" + array[0] + "," + array[1] + ")";
 			}
 			console.log(equation);
-			console.log(pararen);
 			if(pararen === 0)
 			{
 				try
