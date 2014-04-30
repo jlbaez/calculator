@@ -100,10 +100,6 @@ var decimal = false,
 		solveEquation: function() {
 			if(pararen === 0)
 			{
-				if(navigator.notification !== undefined)
-				{
-					navigator.notification.vibrate(500);
-				}
 				this.$input.value = eval(this.$input.value);
 			}
 		},
