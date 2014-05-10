@@ -1,6 +1,9 @@
 var app = app || {};
 var decimal = false,
 	pararen = 0;
+function log(val){
+	return Math.log(val) / Math.LN10;
+}
 (function(){
 	app.AppView = Backbone.View.extend({
 		el: document.getElementById('calculator'),
@@ -122,6 +125,10 @@ var decimal = false,
 					for (var i = 2; i <= output; i++){
 						val = val * i;
 					}
+					if(navigator.notification !== undefined)
+					{
+						navigator.notification.vibrate(500);
+					}
 					this.$input.value = eval(val);
 				}
 				catch(err)
@@ -137,7 +144,6 @@ var decimal = false,
 			equation = equation.replace("cos", "Math.cos");
 			equation = equation.replace("tan", "Math.tan");
 			equation = equation.replace("ln", "Math.log");
-			equation = equation.replace("log", "Math.log10");
 			equation = equation.replace("e", "Math.E");
 			equation = equation.replace("√", "Math.sqrt")
 			if(equation.indexOf("^") != -1)
@@ -150,6 +156,10 @@ var decimal = false,
 			{
 				try
 				{
+					if(navigator.notification !== undefined)
+					{
+						navigator.notification.vibrate(500);
+					}
 					this.$input.value = eval(equation);
 				}
 				catch(err)
